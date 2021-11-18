@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .body, .container{
+        background-color: rgb(168, 16, 16);
+        text-align: center;
+        padding: 20px;
+        margin: 10px;
+        color: white;
+    }
+</style>
+<body>
+    <div class="container">
+        <p>TIP CALCULATOR</p>
+        <div class="bill">
+            <p>How much was the bill?
+            <input type="number" placeholder="Type Here" max="1000" id="total">
+                </p>
+                <p>How many people are sharing the bill?
+                    <input type="number" placeholder="Type Here" max="10" id="people"> 
+                        </p>
+            <br>
+            <button type="submit" placeholder="Calculate" id="calculate">Calculate</button>
+        </div>
+        <div id="final">
+            <p>
+                The Final Amount per person is <br>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("calculate").onclick = function() {
+  calculateTip();
+};
+        
+        function calculateTip(){
+        var a=document.getElementById("total").value;
+        var b=document.getElementById("people").value;
+        let c = a/b;
+            document.getElementById("final").innerHTML=c;
+        }
+
+    </script>
+</body>
+</html>
